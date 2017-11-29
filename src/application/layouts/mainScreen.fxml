@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="814.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <children>
+      <MenuBar layoutY="2.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Plik">
+            <items>
+              <MenuItem fx:id="weightItem" mnemonicParsing="false" onAction="#weightStart" text="Waga" />
+                  <MenuItem fx:id="competitionItem" mnemonicParsing="false" onAction="#competitionStart" text="Zawody" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="O Programie">
+              <items>
+                <MenuItem fx:id="instruction" mnemonicParsing="false" onAction="#showInstruction" text="Instrukcja" />
+                  <MenuItem fx:id="authors" mnemonicParsing="false" onAction="#showAuthors" text="Autorzy" />
+              </items>
+            </Menu>
+            <Menu fx:id="close" mnemonicParsing="false" onAction="#closeProgram" text="Zakoncz" />
+        </menus>
+      </MenuBar>
+
+       <ImageView fx:id="imageView" fitHeight="403.0" fitWidth="517.0" layoutX="142.0" layoutY="199.0">
+         <image>
+            <Image url="@../../res/pzpc.png" />
+         </image></ImageView>
+
+
+
+
+   </children>
+</AnchorPane>
