@@ -1,6 +1,6 @@
 package competition.model;
 
-public class Constans {
+public class ModelContract {
     public static final int GOOD_LIFT = 1;
     public static final int NO_LIFT = -1;
     public static final int NO_VERDICT = 0;

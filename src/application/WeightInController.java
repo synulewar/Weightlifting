@@ -14,6 +14,7 @@ import javafx.scene.control.TableColumn.CellEditEvent;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.util.converter.DoubleStringConverter;
 import javafx.util.converter.IntegerStringConverter;
+import res.StringContract;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,7 +25,6 @@ public class WeightInController implements Initializable {
             FXCollections.observableArrayList(
                     new Contender("Krzysztof", "Synowiec", 1991, 85.2, "PL", "Gornik", 115, 135)
             );
-
 
     @FXML
     private MenuItem save;
@@ -52,9 +52,9 @@ public class WeightInController implements Initializable {
             weightTable.getItems().remove(selectedIndex);
         } else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Ostrzeżenie!");
-            alert.setHeaderText("Nie wybrano zawodnika");
-            alert.setContentText("Wybierz zawodnika do usunięcia!");
+            alert.setTitle(StringContract.WARNING_TITLE);
+            alert.setHeaderText(StringContract.NO_CONTENDER_WARNING);
+            alert.setContentText(StringContract.NO_CONTENDER_MESSAGE);
             alert.showAndWait();
         }
 
@@ -66,32 +66,32 @@ public class WeightInController implements Initializable {
         weightTable.setEditable(true);
 
         //Add col to table
-        TableColumn<Contender, String> firstNameCol = new TableColumn<>("Imię");
-        TableColumn<Contender, String> lastNameCol = new TableColumn<>("Nazwisko");
-        TableColumn<Contender, Integer> bornYearCol = new TableColumn<>("Rocznik");
-        TableColumn<Contender, Double> weightCol = new TableColumn<>("Waga");
-        TableColumn<Contender, String> nationalityCol = new TableColumn<>("Kraj");
-        TableColumn<Contender, String> clubCol = new TableColumn<>("Klub");
-        TableColumn<Contender, Integer> snatchCol = new TableColumn<>("Rwanie");
-        TableColumn<Contender, Integer> cleanJerkCol = new TableColumn<>("Podrzut");
+        TableColumn<Contender, String> firstNameCol = new TableColumn<>(StringContract.FIRST_NAME_COLUMN);
+        TableColumn<Contender, String> lastNameCol = new TableColumn<>(StringContract.LAST_NAME_COLUMN);
+        TableColumn<Contender, Integer> bornYearCol = new TableColumn<>(StringContract.BORN_YEAR_COLUMN);
+        TableColumn<Contender, Double> weightCol = new TableColumn<>(StringContract.WEIGHT_COLUMN);
+        TableColumn<Contender, String> nationalityCol = new TableColumn<>(StringContract.COUNTRY_COLUMN);
+        TableColumn<Contender, String> clubCol = new TableColumn<>(StringContract.CLUB_COLUMN);
+        TableColumn<Contender, Integer> snatchCol = new TableColumn<>(StringContract.SNATCH_COLUMN);
+        TableColumn<Contender, Integer> cleanJerkCol = new TableColumn<>(StringContract.CLEAN_JERK_COLUMN);
 
         // Join column with data
         firstNameCol.setCellValueFactory(
-                new PropertyValueFactory<>("firstName"));
+                new PropertyValueFactory<>(StringContract.FIRST_NAME));
         lastNameCol.setCellValueFactory(
-                new PropertyValueFactory<>("lastName"));
+                new PropertyValueFactory<>(StringContract.LAST_NAME));
         bornYearCol.setCellValueFactory(
-                new PropertyValueFactory<>("bornYear"));
+                new PropertyValueFactory<>(StringContract.BORN_YEAR));
         weightCol.setCellValueFactory(
-                new PropertyValueFactory<>("weight"));
+                new PropertyValueFactory<>(StringContract.WEIGHT));
         nationalityCol.setCellValueFactory(
-                new PropertyValueFactory<>("nationality"));
+                new PropertyValueFactory<>(StringContract.COUNTRY));
         clubCol.setCellValueFactory(
-                new PropertyValueFactory<>("club"));
+                new PropertyValueFactory<>(StringContract.CLUB));
         snatchCol.setCellValueFactory(
-                new PropertyValueFactory<>("entrySnatch"));
+                new PropertyValueFactory<>(StringContract.ENTRY_SNATCH));
         cleanJerkCol.setCellValueFactory(
-                new PropertyValueFactory<>("entryCleanJerk"));
+                new PropertyValueFactory<>(StringContract.ENTRY_CLEAN_JERK));
 
         // Make data editable
 

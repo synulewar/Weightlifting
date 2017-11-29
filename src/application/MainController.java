@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Control;
 import javafx.scene.control.MenuItem;
 import javafx.stage.Stage;
+import res.StringContract;
 
 import java.io.IOException;
 
@@ -36,8 +37,8 @@ public class MainController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        mAppStage.setTitle("Weightlifting 2017");
-        mAppStage.setScene(new Scene(root, 800, 800));
+        mAppStage.setTitle(StringContract.APP_NAME);
+        mAppStage.setScene(new Scene(root, ApplicationDefaults.APPLICATION_WIDTH, ApplicationDefaults.APPLICATION_HEIGHT));
         mAppStage.show();
     }
 

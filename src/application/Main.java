@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import res.StringContract;
 
 public class Main extends Application {
 
@@ -14,8 +15,8 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         mStage = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("layouts/mainScreen.fxml"));
-        primaryStage.setTitle("Weightlifting 2017");
-        primaryStage.setScene(new Scene(root, 800, 800));
+        primaryStage.setTitle(StringContract.APP_NAME);
+        primaryStage.setScene(new Scene(root, ApplicationDefaults.APPLICATION_WIDTH, ApplicationDefaults.APPLICATION_HEIGHT));
         primaryStage.show();
     }
 

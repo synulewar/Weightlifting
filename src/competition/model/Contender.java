@@ -4,7 +4,9 @@ import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
-public class Contender {
+import java.io.Serializable;
+
+public class Contender implements Serializable {
 
     private final SimpleStringProperty firstName;
     private final SimpleStringProperty lastName;

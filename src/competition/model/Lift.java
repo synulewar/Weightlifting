@@ -1,7 +1,7 @@
 package competition.model;
 
-import static competition.model.Constans.GOOD_LIFT;
-import static competition.model.Constans.NUMBER_OF_ATTEMPTS;
+import static competition.model.ModelContract.GOOD_LIFT;
+import static competition.model.ModelContract.NUMBER_OF_ATTEMPTS;
 
 public class Lift {
 
